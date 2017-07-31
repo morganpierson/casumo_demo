@@ -1,4 +1,31 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+
+import api from "../utils/api";
+
+const SelectedGenre = props => {
+  const genres = ["All", "Rock", "Hip-Hop", "R&B", "EDM"];
+  return (
+    <ul className="genres">
+      {genres.map(genre => {
+        return (
+          <li
+            key={genre}
+            style={genre === props.selectedGenre ? { color: "#d0021b" } : null}
+            onClick={props.onSelect.bind(null, genre)}
+          >
+            {genre}
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
+
+SelectedGenre.propTypes = {
+  selectedGenre: PropTypes.string.isRequired,
+  onSelect: PropTypes.func.isRequired
+};
 
 class Trending extends Component {
   constructor(props) {
@@ -15,25 +42,18 @@ class Trending extends Component {
     this.setState({ selectedGenre: genre });
   }
 
-  render() {
-    const genres = ["All", "Rock", "Hip-Hop", "R&B", "EDM"];
+  componentDidMount() {
+    api.fetchArtistInfo();
+  }
 
+  render() {
     return (
-      <ul className="genres">
-        {genres.map(genre => {
-          return (
-            <li
-              key={genre}
-              style={
-                genre === this.state.selectedGenre ? { color: "#d0021b" } : null
-              }
-              onClick={this.updateGenre.bind(null, genre)}
-            >
-              {genre}
-            </li>
-          );
-        })}
-      </ul>
+      <div>
+        <SelectedGenre
+          selectedGenre={this.state.selectedGenre}
+          onSelect={this.updateGenre}
+        />
+      </div>
     );
   }
 }
