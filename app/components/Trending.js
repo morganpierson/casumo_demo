@@ -43,7 +43,7 @@ class Trending extends Component {
   }
 
   componentDidMount() {
-    api.fetchArtistInfo();
+    api.fetchTopArtists();
   }
 
   render() {
