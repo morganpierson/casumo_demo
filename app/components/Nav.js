@@ -9,20 +9,15 @@ const Nav = () => {
           Home
         </NavLink>
       </li>
-      Search by:
+
       <li>
-        <NavLink exact to="/artist" activeClassName="active">
-          Artist
+        <NavLink exact to="/search" activeClassName="active">
+          Search
         </NavLink>
       </li>
       <li>
-        <NavLink to="/song" activeClassName="active">
-          Song
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/genre" activeClassName="active">
-          Genre
+        <NavLink to="/trending" activeClassName="active">
+          Trending
         </NavLink>
       </li>
     </ul>
