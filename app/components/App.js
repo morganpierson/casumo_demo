@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Nav from "./Nav";
 import Trending from "./Trending";
+import Search from "./Search";
 
 class App extends Component {
   render() {
@@ -12,7 +13,8 @@ class App extends Component {
           <Nav />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/trending" component={Trending} />
+            <Route path="/favorites" component={Trending} />
+            <Route path="/search" component={Search} />
           </Switch>
         </div>
       </BrowserRouter>

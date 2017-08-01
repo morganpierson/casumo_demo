@@ -45,6 +45,28 @@ a {
   color: #d0021b;
 }
 
+.favorite-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.favorite-item {
+  margin: 20px;
+  text-align: center;
+}
+
+.favorite-rank {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.favorite-pic {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -62,4 +84,46 @@ a {
   display: block;
   padding: 7px 0;
   margin: 10px auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  align-items: center;
+}
+
+.column input {
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.43);
+  font-size: 16px;
+  width: 80%;
+  text-align: center;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.column label {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200;
 }
