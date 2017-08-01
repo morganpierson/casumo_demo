@@ -127,3 +127,8 @@ input:focus::-webkit-input-placeholder {
   font-size: 30px;
   font-weight: 200;
 }
+
+#artistImage {
+  height: 500px;
+  width: 450px;
+}
