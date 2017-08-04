@@ -61,7 +61,8 @@ class Search extends Component {
 
     this.state = {
       artistName: "",
-      artistImage: null
+      artistImage: null,
+      artistLink: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -75,7 +76,8 @@ class Search extends Component {
       console.log(res);
       return this.setState({
         artistName,
-        artistImage: res.images[0].url
+        artistImage: res.images[0].url,
+        artistLink: res.external_urls.spotify
       });
     });
   }
@@ -83,6 +85,7 @@ class Search extends Component {
   render() {
     const artistImage = this.state.artistImage;
     const artistName = this.state.artistName;
+    const artistLink = this.state.artistLink;
     return (
       <div>
         <div className="row">
@@ -93,6 +96,7 @@ class Search extends Component {
             <ArtistPreview
               artistImage={this.state.artistImage}
               artistName={this.state.artistName}
+              link={artistLink}
             />}
         </div>
       </div>

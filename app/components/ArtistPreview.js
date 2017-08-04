@@ -10,9 +10,9 @@ const ArtistPreview = props => {
           alt={`Image for ${props.artistName}`}
           id="artistImage"
         />
-        <h2 className="artistName">
+        <a className="artistName" href={props.link}>
           {props.artistName}
-        </h2>
+        </a>
       </div>
     </div>
   );
